@@ -1,0 +1,9 @@
+# CTC datasets are licence-restricted: never commit them
+data/
+*.zip
+
+# generated artefacts
+runs/
+__pycache__/
+*.pyc
+.venv/

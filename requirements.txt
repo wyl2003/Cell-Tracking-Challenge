@@ -1,0 +1,18 @@
+# Minimal deps for the CTC scaffold.
+# Install into a project-local venv: python -m venv .venv --system-site-packages
+numpy>=1.24
+scipy>=1.10
+tifffile>=2023.7.10
+py-ctcmetrics>=0.5
+opencv-python>=4.8          # classical baseline (src/segment_classical.py)
+matplotlib>=3.7             # figures (src/make_figure.py)
+
+# Baseline segmentation.
+# 4.x ships only the large `cpsam` / `cpdino` models (1.15 GB of weights) - there
+# is no small `nuclei`/`cyto3` equivalent any more. On an RTX 3060 Laptop cpsam
+# runs at 2.18 s/1024x1024 frame with 1.84 GB of VRAM, which is fine.
+#
+# To reproduce the older `nuclei` rows in the results table you must downgrade:
+#     pip install cellpose==3.1.1.2
+# The two versions cannot coexist in one environment.
+cellpose==4.2.1.1
