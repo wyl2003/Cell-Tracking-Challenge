@@ -10,6 +10,7 @@ the official metric wiring.
 src/ctc_io.py             read/write man_track.txt, res_track.txt, mask###.tif; consistency checks
 src/track.py              IoU + Hungarian association, gap closing, mitosis (1 -> 2) detection
 src/run_track.py          per-frame masks  ->  <seq>_RES/ (mask###.tif + res_track.txt)
+src/run_trackastra.py     same masks, linked by Trackastra instead (the SOTA-linker reference row)
 src/evaluate.py           <seq>_GT + <seq>_RES -> DET / SEG / TRA / OP_CTB via py-ctcmetrics
 src/diagnostics.py        the six AOGM error terms behind TRA, plus CT / TF / division recall
 src/error_analysis.py     what the FNs and FPs actually are (brightness, area, border, overlap)
@@ -63,6 +64,21 @@ Oracle ablation (upper bound for tracking, isolates segmentation error):
 .venv/Scripts/python -m src.run_track --from-gt data/Fluo-N2DH-GOWT1/01_GT --out runs/oracle_01_RES
 .venv/Scripts/python -m src.evaluate --gt data/Fluo-N2DH-GOWT1/01_GT --res runs/oracle_01_RES
 ```
+
+SOTA linker reference row (same masks, only the linker changes):
+
+```bash
+.venv/Scripts/python -m pip install trackastra
+.venv/Scripts/python -m src.run_trackastra --img data/Fluo-N2DH-GOWT1/01 --masks runs/cpsam/01 \
+    --out runs/01_RES_astra_g2d --model general_2d --mode greedy
+```
+
+Trackastra (`general_2d`, greedy) ties our IoU+Hungarian on the headline metric —
+AOGM 422 vs 424 on 01, 1245 vs 1230 on 02, TRA identical at 0.9821 on 01 — while
+being clearly better on track quality (02: 58 tracks vs 76, true value 58; TF
+0.930 vs 0.914; spurious divisions 1 vs 7). Neither linker gets a single division
+right, including the CTC-trained `ctc` weights. Full tables, the oracle-mask
+control and the untested `ilp` mode: [plan/RESULTS_linker_comparison.md](plan/RESULTS_linker_comparison.md).
 
 Measured on Fluo-N2DH-GOWT1, both sequences, same tracker, all zero-shot:
 
