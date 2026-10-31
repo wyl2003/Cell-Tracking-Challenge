@@ -79,11 +79,12 @@ def track_sequence(
             prev_frame = frame - 1 - gap
             if prev_frame not in masks:
                 continue
-            candidates = {
-                t: last_mask_label[t]
-                for t, last in active.items()
-                if last == prev_frame and t not in frame_map.get(frame, {})
-            }
+            # A track that was already linked in this frame has active[t] == frame,
+            # so `last == prev_frame` is enough to exclude it. Do NOT test
+            # `t not in frame_map[frame]` here: that dict is keyed by *mask* label,
+            # not by track id, so the test silently drops the tracks whose id
+            # happens to equal a current mask label.
+            candidates = {t: last_mask_label[t] for t, last in active.items() if last == prev_frame}
             remaining = [l for l in cur_labels if l not in taken]
             if not candidates or not remaining:
                 continue
