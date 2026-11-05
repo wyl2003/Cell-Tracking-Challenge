@@ -136,3 +136,21 @@ dataset the current rule fires zero times out of 6 real divisions, so treat it
   larger than `GT/TRA` (median 2847 vs 1649 px on seq 01), and `GT/SEG` covers
   only 144 objects across 30 frames. SEG is a small, optimistically-selected
   sample — do not read it as "segmentation solved".
+
+
+## Mac baseline tracking study (ZIHAO LI)
+
+The original `src/track.py` and existing commands remain unchanged. The optimized
+IoU/Hungarian baseline is opt-in under `src/baseline_tracking/`.
+
+- [Original vs optimized results, TRA/CT and analysis](plan/RESULTS_baseline_tracking.md)
+- [Recorded experiment configurations](plan/baseline_tracking/configurations.json)
+
+```bash
+python -m pip install -r requirements-baseline.txt
+python -m pytest tests/test_baseline_tracking.py tests/test_baseline_tracking_metrics.py -q
+python -m src.baseline_tracking.benchmark --masks runs/cpsam/01 --gt data/Fluo-N2DH-GOWT1/01_GT --out runs/baseline_comparison_01
+```
+
+The benchmark evaluates original, optimized and optional ablations on the same
+masks. No data, model weights, Trackastra training or ILP changes are included.

@@ -1,0 +1,52 @@
+{
+  "method": "iou_motion_div",
+  "parameters": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "division_mode": "motion",
+    "association": "iou",
+    "max_distance": 30.0,
+    "division_distance": 2.0
+  },
+  "tracking_seconds": 7.317504665988963,
+  "metrics": {
+    "DET": 0.9818756073858115,
+    "SEG": 0.8879088895878288,
+    "TRA": 0.9821643922564265,
+    "CT": 0.5428571428571428,
+    "TF": 0.9469858435915413,
+    "BC(0)": 0.0,
+    "AOGM": 421.5,
+    "AOGM_0": 23632.5,
+    "AOGM_NS": 0,
+    "AOGM_FN": 27,
+    "AOGM_FP": 103,
+    "AOGM_ED": 1,
+    "AOGM_EA": 31,
+    "AOGM_EC": 1,
+    "OP_CSB": 0.9348922484868201,
+    "OP_CTB": 0.9350366409221276,
+    "gt_divisions": 2,
+    "tp_div(0)": 0,
+    "fp_div(0)": 1,
+    "fn_div(0)": 2,
+    "tp_div(1)": 0,
+    "fp_div(1)": 1,
+    "fn_div(1)": 2,
+    "BC(1)": 0.0,
+    "tp_div(2)": 0,
+    "fp_div(2)": 1,
+    "fn_div(2)": 2,
+    "BC(2)": 0.0,
+    "tp_div(3)": 0,
+    "fp_div(3)": 1,
+    "fn_div(3)": 2,
+    "BC(3)": 0.0
+  }
+}

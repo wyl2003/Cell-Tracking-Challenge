@@ -1,0 +1,23 @@
+{
+  "baseline_comparison.csv": "9eaacb1efcef52d3c0d2ec5b47930da26edf7c06162deaadbacde5b28f56d3e2",
+  "baseline_comparison.json": "ee3a563bdc98100a548314499e19b2f379d0fa03101e75d427849daf8a2dd570",
+  "configurations.json": "326598dfd9cf2ba091f8b719c73147b8b235c2bc52e4ad922b49030f5c8ec21a",
+  "division_input_check.csv": "437a95121585322236bfb36ea651c06de0721eeb8967029992408536046ed76b",
+  "environment-lock.txt": "9a36cbf46ecc159e5d98bc7d4e3a6be381d534a0aa863279d1b70de199af1308",
+  "evidence/01/gated_iou_no_div.json": "7103816ec40b9b9dca82a47581f71fe555a6000450f67269493481a5f949c127",
+  "evidence/01/gated_iou_overlap_div.json": "8546c5f73924b33738353b4e47c0c8e162664b96ad4cd6e6a6f680b4ed7665f7",
+  "evidence/01/hybrid_motion_div.json": "1dbc6651182bddc65ce5b106e3dc3cd92c9e4afcd8120f32332a2fd0c5640150",
+  "evidence/01/hybrid_no_div.json": "5be65084dd9298dad80a81885fdca745efb39d1e25ef1f92b72ca533dc768215",
+  "evidence/01/iou_motion_div.json": "f199480ff81f9cf7212c2c0736c56fedb0c011f66b2dfb5a95bd96fa554cd3f9",
+  "evidence/01/legacy_iou_div.json": "72921bd7e32cf83cc9e279a7756f2b947e7d793128ee415c3602f298b54b348d",
+  "evidence/01/manifest.json": "2358b276abf2dc29278d7f1e98814513d430a285fa7cb6a706c22551871dc7f5",
+  "evidence/02/gated_iou_no_div.json": "daae408263b16c799a198d060591c527a6ab1a542ceb3e58f8fbe3ddd11e0679",
+  "evidence/02/gated_iou_overlap_div.json": "fa6104025461be7ab50bcf12e93f9f6bf7ab7c066daa22ba67b851ac8e31ed3a",
+  "evidence/02/hybrid_motion_div.json": "6e0390fcd4b9b43dd687b8b2e19f0ca96ccf5157c833c05ae1f00a9bfb138321",
+  "evidence/02/hybrid_no_div.json": "5f87b4d0708f5e073f809fe3d3e1d529b1f8ce556a904c5b1928870bc66cb4ba",
+  "evidence/02/iou_motion_div.json": "be784899edbe163c27e9763d1c14ac5b995f4916973fd3cd1860fe984ef7bc0b",
+  "evidence/02/legacy_iou_div.json": "ebc01e440f6b7b36c91316ce5311dfd954d52371c9b2e3f9fe3d5911ef939ab4",
+  "evidence/02/manifest.json": "5cd2d0b78f30fdc91b0cf501d944b422ec713921f22f17e91e007c20e8c237f8",
+  "improvement_comparison.csv": "95425323a24c78c0974f02f5ed764ab671297bada4d7207da6e12d30944dcc5b",
+  "validation.json": "1b8930d843e52b2c8911a126401fb1390a7d5770ca6688744703973418d9a145"
+}

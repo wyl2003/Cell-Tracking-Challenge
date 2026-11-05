@@ -1,0 +1,52 @@
+{
+  "method": "hybrid_motion_div",
+  "parameters": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "hybrid",
+    "division_mode": "motion",
+    "max_distance": 30,
+    "division_distance": 2.0
+  },
+  "tracking_seconds": 14.479278874990996,
+  "metrics": {
+    "DET": 0.9572506952721493,
+    "SEG": 0.919300205969326,
+    "TRA": 0.9578571923263384,
+    "CT": 0.3007518796992481,
+    "TF": 0.9056015241464515,
+    "BC(0)": 0.0,
+    "AOGM": 1217.0,
+    "AOGM_0": 28878.0,
+    "AOGM_NS": 0,
+    "AOGM_FN": 88,
+    "AOGM_FP": 196,
+    "AOGM_ED": 0,
+    "AOGM_EA": 94,
+    "AOGM_EC": 0,
+    "OP_CSB": 0.9382754506207377,
+    "OP_CTB": 0.9385786991478322,
+    "gt_divisions": 4,
+    "tp_div(0)": 0,
+    "fp_div(0)": 1,
+    "fn_div(0)": 4,
+    "tp_div(1)": 0,
+    "fp_div(1)": 1,
+    "fn_div(1)": 4,
+    "BC(1)": 0.0,
+    "tp_div(2)": 0,
+    "fp_div(2)": 1,
+    "fn_div(2)": 4,
+    "BC(2)": 0.0,
+    "tp_div(3)": 0,
+    "fp_div(3)": 1,
+    "fn_div(3)": 4,
+    "BC(3)": 0.0
+  }
+}

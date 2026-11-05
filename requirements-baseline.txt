@@ -1,0 +1,7 @@
+# Tracking/evaluation only: no segmentation models, CUDA or torch required.
+# Versions used in the review are recorded in plan/baseline_tracking/environment-lock.txt.
+numpy>=1.24
+scipy>=1.10
+tifffile>=2023.7.10
+py-ctcmetrics==1.3.3
+pytest>=8

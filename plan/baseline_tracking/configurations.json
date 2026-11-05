@@ -1,0 +1,82 @@
+{
+  "gated_iou_overlap_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "iou",
+    "max_distance": 30.0,
+    "division_mode": "overlap",
+    "division_distance": 2.0
+  },
+  "iou_motion_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "division_mode": "motion",
+    "association": "iou",
+    "max_distance": 30.0,
+    "division_distance": 2.0
+  },
+  "hybrid_motion_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "hybrid",
+    "division_mode": "motion",
+    "max_distance": 30,
+    "division_distance": 2.0
+  },
+  "hybrid_no_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": false,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "hybrid",
+    "max_distance": 30,
+    "division_mode": "overlap",
+    "division_distance": 2.0
+  },
+  "legacy_iou_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ]
+  },
+  "gated_iou_no_div": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": false,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "iou",
+    "max_distance": 30.0,
+    "division_mode": "overlap",
+    "division_distance": 2.0
+  }
+}

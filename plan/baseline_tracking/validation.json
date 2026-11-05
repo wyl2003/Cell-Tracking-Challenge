@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-06",
+  "regression_tests_passed": 21,
+  "original_pipeline": "passed for zero- and one-based naming",
+  "real_data_checks": [
+    {
+      "sequence": "01",
+      "method": "legacy_iou_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "01",
+      "method": "gated_iou_no_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "01",
+      "method": "gated_iou_overlap_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "01",
+      "method": "hybrid_no_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "01",
+      "method": "iou_motion_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "01",
+      "method": "hybrid_motion_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "legacy_iou_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "gated_iou_no_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "gated_iou_overlap_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "hybrid_no_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "iou_motion_div",
+      "matches_historical_metrics": true
+    },
+    {
+      "sequence": "02",
+      "method": "hybrid_motion_div",
+      "matches_historical_metrics": true
+    }
+  ],
+  "note": "Relocated code rerun on same saved masks; original timing measurements retained separately."
+}

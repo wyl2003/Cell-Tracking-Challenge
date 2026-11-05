@@ -1,0 +1,13 @@
+sequence,mother,mother_end,child,child_birth,delay_after_mother_end,daughter_birth_spread,best_baseline_track,marker_coverage,detected_over_half
+01,10,46,12,47,1,0,0,0.0,False
+01,10,46,14,47,1,0,37,1.0,True
+01,16,16,18,21,5,4,0,0.0,False
+01,16,16,22,17,1,4,0,0.0,False
+02,5,43,7,48,5,3,64,1.0,True
+02,5,43,8,51,8,3,0,0.0,False
+02,22,82,24,83,1,0,0,0.0,False
+02,22,82,25,83,1,0,0,0.0,False
+02,60,21,61,25,4,0,0,0.0,False
+02,60,21,62,25,4,0,0,0.0,False
+02,63,41,64,46,5,2,0,0.0,False
+02,63,41,67,48,7,2,0,0.0,False

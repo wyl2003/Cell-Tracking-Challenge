@@ -1,0 +1,52 @@
+{
+  "method": "gated_iou_no_div",
+  "parameters": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": false,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ],
+    "association": "iou",
+    "max_distance": 30.0,
+    "division_mode": "overlap",
+    "division_distance": 2.0
+  },
+  "tracking_seconds": 7.667518500005826,
+  "metrics": {
+    "DET": 0.9818756073858115,
+    "SEG": 0.8879088895878288,
+    "TRA": 0.9821432349518672,
+    "CT": 0.5507246376811594,
+    "TF": 0.9469858435915413,
+    "BC(0)": 0.0,
+    "AOGM": 422.0,
+    "AOGM_0": 23632.5,
+    "AOGM_NS": 0,
+    "AOGM_FN": 27,
+    "AOGM_FP": 103,
+    "AOGM_ED": 1,
+    "AOGM_EA": 32,
+    "AOGM_EC": 0,
+    "OP_CSB": 0.9348922484868201,
+    "OP_CTB": 0.935026062269848,
+    "gt_divisions": 2,
+    "tp_div(0)": 0,
+    "fp_div(0)": 0,
+    "fn_div(0)": 2,
+    "tp_div(1)": 0,
+    "fp_div(1)": 0,
+    "fn_div(1)": 2,
+    "BC(1)": 0.0,
+    "tp_div(2)": 0,
+    "fp_div(2)": 0,
+    "fn_div(2)": 2,
+    "BC(2)": 0.0,
+    "tp_div(3)": 0,
+    "fp_div(3)": 0,
+    "fn_div(3)": 2,
+    "BC(3)": 0.0
+  }
+}

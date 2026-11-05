@@ -1,0 +1,48 @@
+{
+  "method": "legacy_iou_div",
+  "parameters": {
+    "iou_threshold": 0.2,
+    "max_gap": 0,
+    "detect_divisions": true,
+    "division_containment": 0.5,
+    "area_ratio_range": [
+      0.5,
+      1.8
+    ]
+  },
+  "tracking_seconds": 26.91938204196049,
+  "metrics": {
+    "DET": 0.9572506952721493,
+    "SEG": 0.919300205969326,
+    "TRA": 0.9575801648313595,
+    "CT": 0.2857142857142857,
+    "TF": 0.8983551473348573,
+    "BC(0)": 0.0,
+    "AOGM": 1225.0,
+    "AOGM_0": 28878.0,
+    "AOGM_NS": 0,
+    "AOGM_FN": 88,
+    "AOGM_FP": 196,
+    "AOGM_ED": 0,
+    "AOGM_EA": 94,
+    "AOGM_EC": 8,
+    "OP_CSB": 0.9382754506207377,
+    "OP_CTB": 0.9384401854003428,
+    "gt_divisions": 4,
+    "tp_div(0)": 0,
+    "fp_div(0)": 9,
+    "fn_div(0)": 4,
+    "tp_div(1)": 0,
+    "fp_div(1)": 9,
+    "fn_div(1)": 4,
+    "BC(1)": 0.0,
+    "tp_div(2)": 0,
+    "fp_div(2)": 9,
+    "fn_div(2)": 4,
+    "BC(2)": 0.0,
+    "tp_div(3)": 0,
+    "fp_div(3)": 9,
+    "fn_div(3)": 4,
+    "BC(3)": 0.0
+  }
+}
