@@ -1,0 +1,5 @@
+﻿source_time,source_label,target_time,target_label,in_gt,general_2d_greedy,general_2d_ilp,finetuned_greedy,finetuned_ilp
+1,40,2,41,False,False,False,False,True
+5,42,6,43,False,False,True,False,True
+19,49,20,50,False,False,False,False,True
+82,22,83,24,True,False,True,True,True

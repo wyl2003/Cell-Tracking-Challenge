@@ -1,0 +1,20 @@
+{
+  "validation_only": true,
+  "image_count": 92,
+  "mask_count": 92,
+  "model_sha256": {
+    "general_2d": "5183fc65d759b09dad4a772ffb94c0598a8687dadf871050d41e4f5de1c37b6b",
+    "finetuned": "e36a1e28c11ef1c3892e4de0f42174e3b3fbf706d5bdf143b440c17567168c16"
+  },
+  "trackastra_version": "0.5.6",
+  "motile_version": "1.0.1",
+  "ilpy_version": "0.6.0",
+  "gurobipy_version": "13.0.3",
+  "batch_size": 1,
+  "tracking_parameters": {
+    "greedy_threshold": 0.5,
+    "ilp_config": "gt",
+    "ilp_allow_divisions": true,
+    "ilp_solver": "motile.Solver.solve defaults: backend Any, 1 thread, no timeout"
+  }
+}

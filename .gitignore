@@ -7,3 +7,13 @@ runs/
 __pycache__/
 *.pyc
 .venv/
+
+# Trackastra research keeps only small source/config/result metadata.
+research/trackastra/**/*.pt
+research/trackastra/**/*.ckpt
+research/trackastra/**/*.tif
+research/trackastra/**/*.tiff
+research/trackastra/**/*.pkl
+research/trackastra/**/02_RES/
+research/trackastra/**/.venv/
+research/trackastra/**/.cache/

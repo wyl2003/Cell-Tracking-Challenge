@@ -1,0 +1,4 @@
+experiment,status,epochs_requested,actual_epochs,best_epoch,train_samples,lr,seed,tracking_mode,best_val_loss,CT,TRA,AOGM,evaluation_set,checkpoint_sha256
+e10_s89_lr1e-05_4c88b0c06c1c,complete,10,4,3,89,1e-05,20839,greedy,0.007421113085001707,0.897196261682243,0.996623727404945,97.5,02 validation (not independent test),1be2407d5d15771421aaa4d86b9f17203efaddec6bc3cac0c90d3d220f7999f2
+e10_s89_lr1e-05_7da1dcd98deb,complete,10,2,1,89,1e-05,44,greedy,0.031200554221868515,0.897196261682243,0.996623727404945,97.5,02 validation (not independent test),ffa687ca43226bcd0ea0e3da61f5de17f99730848b083e91a7204ce668877e06
+e10_s89_lr1e-05_4020abbc14dc,complete,10,2,1,89,1e-05,43,greedy,0.013151999562978745,0.8867924528301887,0.9965890989680726,98.5,02 validation (not independent test),06e19e7a912fbdae48601a48e846573c36591378a1fb6c11ab6c5008c0f2e820

@@ -1,0 +1,52 @@
+# Pretrained model
+model: "/absolute/path/to/general_2d"  # edit locally; never commit model.pt
+
+# Dataset paths
+input_train:
+  - "/absolute/path/to/Fluo-N2DH-GOWT1/01"
+
+input_val:
+  - "/absolute/path/to/Fluo-N2DH-GOWT1/02"
+
+# Ground truth masks
+detection_folders:
+  - TRA
+
+# Model settings
+ndim: 2
+features: wrfeat
+d_model: 320
+window: 4
+num_encoder_layers: 6
+num_decoder_layers: 6
+pos_embed_per_dim: 32
+feat_embed_per_dim: 8
+dropout: 0.0
+spatial_pos_cutoff: 256
+attn_positional_bias: rope
+attn_positional_bias_n_spatial: 16
+attn_dist_mode: v0
+causal_norm: quiet_softmax
+
+# Training settings
+name: gowt1_finetune_smoke
+outdir: runs
+epochs: 2
+train_samples: 16
+batch_size: 1
+max_tokens: 128
+crop_size: [256, 256]
+lr: 0.00001
+warmup_epochs: 0
+augment: 0
+
+# GPU settings
+device: cuda
+mixedp: true
+distributed: false
+num_workers: 0
+
+# Logging
+logger: tensorboard
+example_images: false
+resume: false

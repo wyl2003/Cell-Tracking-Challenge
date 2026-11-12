@@ -78,7 +78,8 @@ AOGM 422 vs 424 on 01, 1245 vs 1230 on 02, TRA identical at 0.9821 on 01 — whi
 being clearly better on track quality (02: 58 tracks vs 76, true value 58; TF
 0.930 vs 0.914; spurious divisions 1 vs 7). Neither linker gets a single division
 right, including the CTC-trained `ctc` weights. Full tables, the oracle-mask
-control and the untested `ilp` mode: [plan/RESULTS_linker_comparison.md](plan/RESULTS_linker_comparison.md).
+control and the untested `ilp` mode **for the Cellpose-mask condition**:
+[plan/RESULTS_linker_comparison.md](plan/RESULTS_linker_comparison.md).
 
 Measured on Fluo-N2DH-GOWT1, both sequences, same tracker, all zero-shot:
 
@@ -136,3 +137,12 @@ dataset the current rule fires zero times out of 6 real divisions, so treat it
   larger than `GT/TRA` (median 2847 vs 1649 px on seq 01), and `GT/SEG` covers
   only 144 objects across 30 frames. SEG is a small, optimistically-selected
   sample — do not read it as "segmentation solved".
+
+## Trackastra fine-tuning research
+
+The Trackastra research covers the eight-run fine-tuning grid, seed and cache
+reproducibility, the Greedy/ILP comparison with GT/TRA masks, and the end-to-end
+comparison with single-scale and Multi-scale Cellpose masks. All scores in this
+study use **Fluo-N2DH-GOWT1 sequence 02 for validation**.
+[Integrated report](research/trackastra/reports/integrated_conclusion.md) ·
+[Research and reproduction guide](research/trackastra/README.md)

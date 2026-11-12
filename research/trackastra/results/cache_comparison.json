@@ -1,0 +1,20 @@
+{
+  "datasets": [
+    {
+      "sequence": "02",
+      "cache_key": "923423035f0e048421e4079ea18bb61765b11900ade42552b49692684fd1fb7a.pkl",
+      "images_equal": true,
+      "gt_masks_equal": true,
+      "gt_tracks_equal": true,
+      "crop_random_state_equal": false
+    },
+    {
+      "sequence": "01",
+      "cache_key": "a829bb5128eb8a3c5c4201bfd18e383bad8ca6ea219790771d1d497dbb5dedc2.pkl",
+      "images_equal": true,
+      "gt_masks_equal": true,
+      "gt_tracks_equal": true,
+      "crop_random_state_equal": false
+    }
+  ]
+}

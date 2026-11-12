@@ -1,0 +1,2 @@
+﻿source_time,source_label,target_time,target_label,status,in_gt,selected_weight,manual_weight
+5,42,6,43,manual_only,False,,0.5764879584312439

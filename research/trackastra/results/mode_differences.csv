@@ -1,0 +1,3 @@
+﻿model,nodes_only_greedy,nodes_only_ilp,edges_only_greedy,edges_only_ilp,splits_only_greedy,splits_only_ilp,exact_same_graph
+general_2d,0,8,0,2,0,1,False
+finetuned,0,8,0,3,0,0,False

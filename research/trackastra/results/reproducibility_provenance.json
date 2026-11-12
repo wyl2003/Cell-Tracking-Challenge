@@ -1,0 +1,29 @@
+{
+  "checkpoint_sha256": {
+    "manual_exp2": "976a6eea642c14982aba0771ab3f930979573f54ad4ce8fcdd00ec086f1a7c0b",
+    "grid_seed42": "e36a1e28c11ef1c3892e4de0f42174e3b3fbf706d5bdf143b440c17567168c16",
+    "replay_seed20839_root_cache": "1be2407d5d15771421aaa4d86b9f17203efaddec6bc3cac0c90d3d220f7999f2",
+    "replay_seed20839_manual_cache": "976a6eea642c14982aba0771ab3f930979573f54ad4ce8fcdd00ec086f1a7c0b"
+  },
+  "model_config_sha256": {
+    "manual": "c58fa0e0637393e6049989109d1c0221a375f70bd12b3961230f808d6364b86d",
+    "grid": "c58fa0e0637393e6049989109d1c0221a375f70bd12b3961230f808d6364b86d",
+    "same_seed_replay": "c58fa0e0637393e6049989109d1c0221a375f70bd12b3961230f808d6364b86d"
+  },
+  "manual_vs_grid_effective_config_differences": {
+    "seed": [
+      20839,
+      42
+    ]
+  },
+  "manual_vs_same_seed_effective_config_differences": {},
+  "exact_manual_reproduction": true,
+  "runtime": {
+    "torch_version": "2.14.1+cu126",
+    "lightning_version": "2.6.6",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+    "git_commit": "aa57a95160002e0fc70b915ab74178b39c99fd6a"
+  },
+  "evaluation_set": "02 validation with GT/TRA masks; not independent test"
+}

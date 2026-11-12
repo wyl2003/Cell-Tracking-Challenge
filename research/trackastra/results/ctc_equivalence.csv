@@ -1,0 +1,11 @@
+﻿model,same_foreground,consistent_track_id_mapping,bijective_track_id_mapping,track_table_equal_after_relabel,semantically_equivalent,raw_mask_pixel_equal_frames,total_frames,track_id_count
+e10_s16_lr1e-05_f55dd22773bd,True,True,True,True,True,0,92,49
+e10_s89_lr1e-05_172ea7de19d3,True,True,True,True,True,92,92,49
+e10_s89_lr5e-06_061c63c3a050,True,True,True,True,True,0,92,49
+e2_s16_lr1e-05_3ff88d75f518,True,True,True,True,True,0,92,49
+e2_s89_lr1e-05_6ab88bdbbbc7,True,True,True,True,True,0,92,49
+e2_s89_lr5e-06_5ae22a0d4fb2,True,True,True,True,True,76,92,49
+seed_20839,True,True,True,True,True,0,92,49
+seed_44,True,True,True,True,True,0,92,49
+seed_43,True,False,True,False,False,0,92,48
+manual_exp2,True,False,True,False,False,0,92,48

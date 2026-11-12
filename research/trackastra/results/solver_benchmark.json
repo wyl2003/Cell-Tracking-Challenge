@@ -1,0 +1,45 @@
+{
+  "method": "one prediction and one candidate graph per model; default build_graph parameters; one timed call per solver",
+  "results": {
+    "general_2d": {
+      "prediction_s": 4.946016400001099,
+      "candidate_build_s": 0.08131079999657231,
+      "candidate_nodes": 2517,
+      "candidate_edges": 2465,
+      "greedy": {
+        "solver_s": 0.012575700002344092,
+        "nodes": 2509,
+        "edges": 2461,
+        "same_nodes_as_main_run": true,
+        "same_edges_as_main_run": true
+      },
+      "ilp": {
+        "solver_s": 1.2614666000008583,
+        "nodes": 2517,
+        "edges": 2463,
+        "same_nodes_as_main_run": true,
+        "same_edges_as_main_run": true
+      }
+    },
+    "finetuned": {
+      "prediction_s": 4.114338899998984,
+      "candidate_build_s": 0.07595109999965644,
+      "candidate_nodes": 2517,
+      "candidate_edges": 2468,
+      "greedy": {
+        "solver_s": 0.011866400000144495,
+        "nodes": 2509,
+        "edges": 2462,
+        "same_nodes_as_main_run": true,
+        "same_edges_as_main_run": true
+      },
+      "ilp": {
+        "solver_s": 1.0351442999999563,
+        "nodes": 2517,
+        "edges": 2465,
+        "same_nodes_as_main_run": true,
+        "same_edges_as_main_run": true
+      }
+    }
+  }
+}
