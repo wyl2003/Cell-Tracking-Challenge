@@ -1,14 +1,17 @@
-# Trackastra research: fine-tuning and tracking decoders
+# Trackastra research: fine-tuning, tracking decoders and Multi-scale segmentation
 
 This directory records completed Windows experiments on Fluo-N2DH-GOWT1. It is separate from the team's `src/` baseline and Cellpose modules. It contains no pretrained or fine-tuned weights, CTC images, datasets, caches, or virtual environments.
 
-**All scores here use sequence `02` as a validation sequence with `02_GT/TRA` masks. They are not independent test-set results.** The GT/TRA masks are oracle detections. They isolate association quality and are not comparable with the team's Cellpose-mask operating point without clearly labeling the different input masks.
+**All scores here are on the Fluo-N2DH-GOWT1 `02` validation sequence.** The association experiments feed GT/TRA masks to the tracker. The end-to-end experiments feed predicted Cellpose masks to the tracker and use GT for scoring.
+
+The integrated report contains the original TensorBoard epoch loss curves, comparison tables, and conclusions. [Integrated report](reports/integrated_conclusion.md)
 
 ## Results
 
 - [Fine-tuning and eight-run grid](reports/grid_search.md): six CT/TRA ties; the selected checkpoint is `e10_s89_lr1e-05_172ea7de19d3`, chosen by Validation Loss among the tied runs.
 - [Three-seed stability and cache reproducibility](reports/reproducibility.md): seeds 43, 44, 20839; CT `0.893728 ± 0.006007` and TRA `0.996612 ± 0.000020` (sample SD, n=3). The manual seed-20839 run was reproduced exactly when its cache was reused; the root cache did not reproduce it.
-- [Greedy versus ILP](reports/greedy_vs_ilp.md): `general_2d + ILP` has the highest CT (`0.964912`) and TRA (`0.999359`) on this one validation sequence. ILP keeps eight detections omitted by Greedy, but selects more wrong edges.
+- With GT/TRA masks, `general_2d + ILP` has the highest CT (`0.964912`) and TRA (`0.999359`). ILP keeps eight detections omitted by Greedy and selects more wrong edges. [Greedy versus ILP](reports/greedy_vs_ilp.md)
+- With predicted masks, Multi-scale improves TRA and CT in all four paired comparisons. The pretrained ILP run has the highest TRA (`0.96198`) and OP_CTB (`0.94060`). The pretrained Greedy run has the highest CT (`0.37288`). [End-to-end comparison](results/multiscale_tracking_02/comparison.csv)
 - [Four-row comparison CSV](results/greedy_vs_ilp.csv), [changed edges](results/changed_edges.csv), [solver timing](results/solver_benchmark.json), and [curated result directory](results/).
 
 ## Layout
@@ -19,9 +22,10 @@ This directory records completed Windows experiments on Fluo-N2DH-GOWT1. It is s
 | `scripts/run_finetune_experiments.py` | Grid and seed runner; starts every attempt from `general_2d`, records best checkpoint and CTC metrics |
 | `scripts/analyze_tracking_graphs.py` | Compare six tied graphs, three seed reruns and the manual run |
 | `scripts/compare_greedy_ilp.py` | Four model × decoder runs, independent CTC directories, BC/CT/TRA/AOGM and graph errors |
+| `scripts/run_multiscale_tracking.py` | Generate single-scale and Multi-scale Cellpose masks, then evaluate all eight model × decoder × mask combinations |
 | `scripts/curate_results.py` | Export path-free, small CSV/JSON/graph artifacts from local completed runs |
 | `results/` | Numerical results, checkpoint hashes, changed/error edge tables and raw metric CSVs; no full GT graph or TIFF masks |
-| `reports/` | Findings and caveats |
+| `reports/` | Integrated findings, individual experiment reports and the epoch loss figure |
 
 ## Reproduce the workflow
 
@@ -49,6 +53,22 @@ The runner's `--cache-dir` pins the official training cache (default `<trackastr
 
 To regenerate the small committed tables from a local copy of the completed experiments, use `scripts/curate_results.py --local-scripts <official-checkout>/scripts`. The local run directory must contain the original output folders; this command only reads them and writes metadata. The committed reports and numeric results remain useful when the large private artifacts are unavailable.
 
-## Later Cellpose integration
+## Reproduce the Multi-scale Cellpose comparison
 
-The existing [`src/run_trackastra.py`](../../src/run_trackastra.py) already accepts `--img` and `--masks` and writes a CTC `<seq>_RES` directory for pretrained models. A future fine-tuned integration should accept a **model folder containing `model.pt`, `config.yaml`, and `train_config.yaml`**, plus `--img`, `--masks`, `--mode`, `--device`, and `--out`. `--masks` should be a sequence of 0-based, per-frame integer instance-label TIFFs, one per raw image, with zero as background and matching spatial shape. Track IDs need not be consistent across input frames. Keep Greedy and ILP outputs in distinct directories, then score both with the same `src.evaluate`/py-ctcmetrics path and report the mask source (`GT/TRA` versus Cellpose) beside each metric. Do not use GT/TRA masks as Cellpose outputs or compare the two conditions as if they had identical detections.
+Use a Trackastra environment with Cellpose `4.2.1.1` and the `cpsam_v2` weights available through the Cellpose model cache. The runner applies the team's merge function from commit `72ed2c1` using diameters 48 and 32, overlap threshold 0.10, and minimum area 200 pixels. The checkpoint and source hashes are recorded with the results. [Run settings](results/multiscale_tracking_02/provenance.json)
+
+Run these commands from the repository root. Create the detached worktree once, then set the local checkpoint and evaluator paths. Both model folders should contain `model.pt`, `config.yaml`, and `train_config.yaml`.
+
+```powershell
+git fetch https://github.com/wyl2003/Cell-Tracking-Challenge.git feature/segmentation-improvement
+git worktree add --detach runs/trackastra/segmentation_source 72ed2c19d55ac606cf28f3d928e97e8362301248
+
+& $py research/trackastra/scripts/run_multiscale_tracking.py `
+  --dataset data/Fluo-N2DH-GOWT1 --sequence 02 `
+  --segmentation-source runs/trackastra/segmentation_source/src/segmentation_postprocess.py `
+  --pretrained C:\path\to\general_2d --finetuned C:\path\to\selected\train `
+  --output runs/trackastra/multiscale_tracking_02 --device cuda `
+  --ctc-evaluate C:\path\to\ctc_evaluate.exe
+```
+
+The runner writes the per-frame instance masks and one CTC result directory per configuration under the output folder. The archived scores and per-frame instance counts can be inspected directly. [Results directory](results/multiscale_tracking_02/)

@@ -140,9 +140,9 @@ dataset the current rule fires zero times out of 6 real divisions, so treat it
 
 ## Trackastra fine-tuning research
 
-The completed [Trackastra research archive](research/trackastra/README.md) contains
-the eight-run fine-tuning grid, seed and cache reproducibility analysis, and
-`general_2d`/fine-tuned × Greedy/ILP comparison. These results use **02 as a
-validation sequence with GT/TRA masks**, unlike the Cellpose-mask operating point
-reported above. No models, CTC images, dataset files or environments are stored
-in the repository.
+The Trackastra research covers the eight-run fine-tuning grid, seed and cache
+reproducibility, the Greedy/ILP comparison with GT/TRA masks, and the end-to-end
+comparison with single-scale and Multi-scale Cellpose masks. All scores in this
+study use **Fluo-N2DH-GOWT1 sequence 02 for validation**.
+[Integrated report](research/trackastra/reports/integrated_conclusion.md) ·
+[Research and reproduction guide](research/trackastra/README.md)
